@@ -38,7 +38,11 @@ onBeforeMount(async () => {
         <div v-else-if="isError" class="w-full h-20 flex items-center justify-center text-xl">
           Нет данных
         </div>
-        <RouterView v-else />
+        <RouterView v-else v-slot="{ Component }">
+          <KeepAlive>
+            <component :is="Component" />
+          </KeepAlive>
+        </RouterView>
       </NLayoutContent>
     </div>
   </NLayout>
