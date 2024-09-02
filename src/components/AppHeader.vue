@@ -50,7 +50,6 @@ const menuOptions: MenuOption[] = [
 <template>
   <NMenu :value="String($route.name)" :options="menuOptions" mode="horizontal" />
   <NDropdown
-    class="relative"
     trigger="click"
     :options="
       currencyStore.CURRENCIES.map((currency) => ({
@@ -64,9 +63,8 @@ const menuOptions: MenuOption[] = [
         currencyStore.CURRENCIES[0]
     "
   >
-    <NButton
-      class="font-bold text-xl absolute bottom-5 right-5 sm:relative sm:bottom-0 sm:right-0"
-      >{{ currencyStore.currentCurrency.symbol }}</NButton
-    >
+    <NButton class="font-bold text-xl fixed bottom-5 right-5 sm:relative sm:bottom-0 sm:right-0">{{
+      currencyStore.currentCurrency.symbol
+    }}</NButton>
   </NDropdown>
 </template>
