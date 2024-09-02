@@ -1,3 +1,3 @@
 # converter
 
-Currency converter
+Currency Converter
